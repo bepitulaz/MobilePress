@@ -92,7 +92,7 @@ if ( ! class_exists('MobilePress_admin'))
 			// Load ads and analytics view
 			mopr_load_view('admin_ads', $data);
 		}
-		
+
 		/**
 		 * Renders the MobilePress options page
 		 *

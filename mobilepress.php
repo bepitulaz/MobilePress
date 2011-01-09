@@ -2,7 +2,7 @@
 /*
 Plugin Name: MobilePress
 Plugin URI: http://mobilepress.co.za
-Description: Turn your WordPress blog into a mobile website/blog.
+Description: Turn your WordPress blog into a mobile website/blog. Modified by Magikube team <a href="http://magikube.com">http://magikube.com</a>
 Version: 1.1.5
 Author: Aduity
 Author URI: http://aduity.com
@@ -37,8 +37,11 @@ require_once(dirname(__FILE__) . '/system/config/versions.php');
 // Load the core class
 require_once(dirname(__FILE__) . '/system/classes/core.php');
 
+// Load the Magikube extention for Mobilepress
+require_once(dirname(__FILE__) . '/magikube-extention/magikube.php');
+
 if (class_exists('MobilePress_core'))
-{	
+{
 	// New MobilePress object
 	$mobilepress = new MobilePress_core;
 	
@@ -53,6 +56,18 @@ if (class_exists('MobilePress_core'))
 	{
 		// Setup the admin area
 		$mobilepress->create_admin();
+
+                /**
+                 * Setup the Magikube extention menu
+                 *
+                 * @package Magikube
+                 * @since Shopkube 1.0
+                 */
+                if (class_exists('Magikube_Ext')) {
+                    // New Magikube object
+                    $magikube = new Magikube_Ext;
+                    $magikube->loadMagikube();
+                }
 	}
 	else
 	{

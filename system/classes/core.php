@@ -42,7 +42,7 @@ if ( ! class_exists('MobilePress_core'))
 		function load_admin()
 		{
 			require_once(MOPR_PATH . 'classes/admin.php');
-			
+                        
 			$MobilePress_admin = new MobilePress_admin;
 			
 			// Add admin 'MobilePress' to the top level menu area
@@ -56,6 +56,7 @@ if ( ! class_exists('MobilePress_core'))
 				
 				//Add the 'Ads' submenu to the MobilePress menu and render the page
 				add_submenu_page('mobilepress', 'MobilePress Ads', 'Mobile Ads', 10, 'mobilepress-ads', array(&$MobilePress_admin, 'render_ads'));
+
 		}
 		
 		/**
